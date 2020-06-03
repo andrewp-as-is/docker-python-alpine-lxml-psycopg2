@@ -1,7 +1,8 @@
 FROM python:3.8-alpine
 
 RUN apk update \
-    && apk add --virtual .build-deps gcc libxslt-dev musl-dev python3-dev \
+    && apk add gcc musl-dev \
+    && apk add --virtual .build-deps libxslt-dev python3-dev \
     && apk add postgresql-dev \
     && pip install --upgrade pip \
     && pip install psycopg2 \
